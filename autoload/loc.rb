@@ -6,7 +6,7 @@ class Loc
 
   def execute
     total = (1..@buffer.length).reject do |index|
-      @buffer[index] =~ /^\s*#.*$/ || @buffer[index] =~ /^\s*$/
+      @buffer[index] =~ /^\s*(#.*)?$/
     end.length
 
     VIM::message(total)
